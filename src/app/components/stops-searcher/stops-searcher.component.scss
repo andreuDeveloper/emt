@@ -1,0 +1,49 @@
+.loading {
+  margin-top: 150px;
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+  align-items: center;
+
+  span {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+}
+
+.iteration-status {
+
+  margin-top: 15px;
+
+  .progress-container {
+    padding: 0;
+    position: relative;
+    border: 1px solid #ccc;
+    height: 30px;
+    width: 100%;
+    border-radius: 100px;
+    overflow: hidden;
+    background-color: rgb(88, 118, 182);
+
+    .progress-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      z-index: 5;
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      color: white;
+      text-align: center;
+    }
+  }
+  .progress-fill {
+    border-radius: 100px;
+    display: block;
+    height: 100%;
+    background-color: rgb(12, 18, 53);
+  }
+}

@@ -1,0 +1,56 @@
+
+<div class="stop-info">
+
+  <div class="stop-header">
+    <div class="flex-center">
+      <div class="number">{{info.idParada}}</div>
+      <div class="name">{{info.nombreParada}}</div>
+    </div>
+    <div class="updatetime">Actualizado: {{returnDateDiff(info.timestamp)}}</div>
+  </div>
+
+  <div class="estimations">
+    <div class="estimation" *ngFor="let bus of info.estimaciones" [ngStyle]="{'border-color': '#'+bus.color}">
+
+
+      <div class="number" [ngStyle]="{'background-color': '#'+bus.color+'AA'}">
+        <i class="fa fa-bus" aria-hidden="true"></i>{{bus.line}}
+        <span class="name">{{bus.vh_first.destino.toUpperCase()}}</span>
+      </div>
+
+        <div class="bus-status-container">
+          <div class="bus-status first" *ngIf="bus.vh_first">
+            <div class="title">Primer bus</div>
+            <div class="content">
+              <div class="parada" *ngIf="bus.vh_first.enParada">
+                En parada
+              </div>
+              <div class="llegando" *ngIf="bus.vh_first.llegando">
+                Llegando
+              </div>
+              <div class="remaining" *ngIf="!bus.vh_first.enParada && !bus.vh_first.llegando">
+                {{secondsToString(bus.vh_first.seconds)}}
+              </div>
+            </div>
+          </div>
+
+          <div class="bus-status second" *ngIf="bus.vh_second">
+            <div class="title">Siguiente</div>
+            <div class="content">
+              <div class="parada" *ngIf="bus.vh_second.enParada">
+                En parada
+              </div>
+              <div class="llegando" *ngIf="bus.vh_second.llegando">
+                Llegando
+              </div>
+              <div class="remaining" *ngIf="!bus.vh_second.enParada && !bus.vh_second.llegando">
+                {{secondsToString(bus.vh_second.seconds)}}
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+
+</div>

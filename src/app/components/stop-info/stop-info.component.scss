@@ -1,0 +1,92 @@
+
+.stop-info {
+  margin-bottom: 30px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+
+  > div {
+    padding: 10px 15px;
+  }
+
+  .stop-header {
+
+    border-bottom: 1px solid #ccc;
+
+    .number {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .name {
+      padding-left: 10px;
+      font-size: 16px;
+    }
+
+
+    .updatetime {
+      font-size: 10px;
+
+    }
+  }
+
+  .estimations {
+
+    .estimation {
+      padding: 10px;
+      border-left: 3px solid;
+      margin-bottom: 15px;
+
+
+      .number {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 10px;
+        width: fit-content;
+        min-width: 60px;
+        text-align: center;
+        padding: 5px 10px;
+
+        > i{
+          padding-right: 5px;
+        }
+
+        .name {
+          padding-left: 10px;
+          font-size: 15px;
+          font-weight: 500;
+        }
+
+      }
+
+      .bus-status-container{
+        margin-top: 10px;
+        display: flex;
+      }
+
+      .bus-status {
+        width: 100%;
+
+        .title {
+          font-weight: 500;
+          border-bottom: 1px solid #ccc;
+        }
+
+        .content {
+          padding: 5px 0px;
+
+          .parada, .llegando {
+            color: #cb2b24;
+            font-weight: 500;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+}

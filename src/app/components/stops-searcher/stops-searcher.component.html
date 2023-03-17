@@ -1,0 +1,32 @@
+
+
+<div class="loading" *ngIf="!token">
+  <span>Obteniendo token...</span>
+  <img
+    width="150"
+    alt="Loading token"
+    src="../../../assets/images/loading-gif.gif"
+  />
+</div>
+
+<div *ngIf="token">
+
+  <div *ngIf="isSearching" class="iteration-status">
+    <div class="progress-container">
+      <div [ngStyle]="{'width': (((iterationInfo.actualIteraton+1) / iterationInfo.maxIterations) * 100)+'%'}" class="progress-fill"></div>
+      <div class="progress-text">Realizando llamadas {{iterationInfo.actualIteraton}} / {{iterationInfo.maxIterations}}</div>
+    </div>
+  </div>
+
+  <div class="input-group mb-3 mt-3">
+    <input type="text" class="form-control" [(ngModel)]="stopNumber" placeholder="Número de bus">
+    <div class="input-group-append">
+      <button (click)="getParadaInfo(stopNumber)" class="btn btn-outline-secondary" type="button"><i class="fa fa-bus" aria-hidden="true"></i>&nbsp;&nbsp;Buscar</button>
+    </div>
+  </div>
+
+  <div *ngIf="stopInfo">
+    <app-stop-info [info]="stopInfo"></app-stop-info>
+  </div>
+</div>
+
